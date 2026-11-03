@@ -24,7 +24,7 @@ dsh plugin --profile desktop add /path/to/dsh-whale-gen
 # 或者手动：package.json 的 dependencies 加 link: 指向本仓库，bundles 里加上 dsh-whale-gen
 ```
 
-装好重启 DSH，侧边栏多一个「本机出图」。
+装好重启 DSH，侧边栏多一个「鲸鱼出图」。
 
 ## 前置条件
 
