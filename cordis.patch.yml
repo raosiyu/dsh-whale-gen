@@ -1,0 +1,19 @@
+# dsh-whale-gen bundle 层：一行宿主半区。
+#
+# 浏览器半区**不是**另一行 loader：它由 package.json 的 dsh.client 声明，
+# 由 web 应用启动时自动加载 ./lib/client.js。写成独立行会让它当宿主插件
+# 装载，然后卡在「waiting for service: slots」——slots 是浏览器侧的服务。
+#
+# 配置项：
+#   enabled        总开关
+#   pythonPath     venv 里的 python（要能 import torch + diffusers）
+#   serviceScript  被托管的出图服务脚本
+#   outputDir      出图落盘目录
+#   port           插件托管的本地服务端口（只监听 127.0.0.1）
+#   announceToAgent 是否向模型注入系统提示段
+- insert:
+    - id: dsh-whale-gen
+      name: 'dsh-whale-gen'
+      config:
+        enabled: true
+        announceToAgent: true
